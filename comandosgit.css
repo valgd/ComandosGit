@@ -1,0 +1,62 @@
+body{
+    margin: 0;
+    background-image: url('fondo.jpg'); 
+
+}
+header{
+    background: #005187;
+    display: flex;
+    justify-content: center;
+    color: white;
+}
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+table{
+    font-size:1rem ;
+    margin-top: 30px;
+    width: 85%;
+    text-align: center;
+}
+
+tr:nth-child(odd){
+    background: #c4dafa;
+}
+tr:nth-child(even){
+    background-color: #84b6f4;
+}
+
+.conclusion{
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    font-size: 1.2rem;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+/* PIE DE PÁGINA */
+footer{
+    background-color: #005187;
+    color: white;
+    font-size: 1rem;
+    margin-bottom: 0;
+}
+
+
+footer .pie {
+    text-align: center; 
+    color: white;
+    font-size: 1rem;
+}
+
+footer .derechos {
+    background: #142157;
+    color: white;
+    text-align: center;
+    font-size: 1rem;
+}

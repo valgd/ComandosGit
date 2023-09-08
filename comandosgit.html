@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comandos Git</title>
+    <link rel="stylesheet" href="comandosgit.css">
+</head>
+<body>
+    <header>
+        <h2>Comandos de Git</h2>
+    </header>
+
+    <main>
+        <table>
+            <tbody>
+                <tr>
+                    
+                    <th>Comando</th>
+                    <th>Descripción</th>
+                    <th>Parámetros</th>
+                    <th>Ejemplo</th>
+                </tr>
+    
+                <tr>
+                    <th colspan="4">Configuración</th>
+                </tr>
+    
+                <tr>
+                    <th>git config --global user.name "nombre"</th>
+                    <td>Configuración del nombre de usuario</td>
+                    <td>
+                        <ul>
+                            <li>--global: indica que la configuración se aplicará de manera global en tu sistema. </li>
+                            <li>user.name: nombre de la clave que estás configurando, en este caso el nombre de usuario</li>
+                            <li>"nombre": reemplazar esta parte por tu nombre real</li>
+                        </ul>
+                    </td>
+                    <td> git config --global user.name "Valeria Gutiérrez" </td>
+                </tr>
+    
+                <tr>
+                    <th>git config --global user.email "email"</th>
+                    <td>Establecer dirección de correo electrónico que se asociará a cada commit y 
+                        se guarda en el historial
+                    </td>
+                    <td>
+                        <ul>
+                            <li>--global: indica que la configuración se aplicará de manera global en tu sistema. </li>
+                            <li>user.email: nombre de la clave que estás configurando, en este caso la dirección
+                                de correo electrónico
+                            </li>
+                            <li>"email": reemplazar esta parte por dirección de correo electrónico</li>
+                        </ul>
+                    </td>
+                    <td> git config --global user.email "vadigutierrezde@ittepic.edu.mx" </td>
+                </tr>
+    
+                
+                <tr>
+                    <th>git config --global -e</th>
+                    <td> Fichero que utiliza para editar la configuración global de Git </td>
+                    <td>
+                        <ul>
+                            <li>--global: Indica que deseas editar la configuración global de Git. </li>
+                            <li>-e: indica que deseas abrir el archivo de configuración en un editor de texto para realizar cambios.</li>
+                        </ul>
+                    </td>
+                    <td> git config --global -e</td>
+                </tr>
+
+                <tr>
+                    <th colspan="4">Inicialización</th>
+                </tr>
+
+                <tr>
+                    <th>git init</th>
+                    <td>Inicializar un directorio existente como repositorio Git</td>
+                    <td>Ninguno</td>
+                    <td>git init</td>
+                </tr>
+
+                <tr>
+                    <th>git clone "url"</th>
+                    <td>Se utiliza para clonar (copiar) un repositorio Git desde una URL remota a tu máquina local.</td>
+                    <td><ul>
+                        <li>"url": url del repositorio remoto</li>
+                    </ul></td>
+                    <td>git clone https://github.com/valgd/iw2023ittepic.git </td>
+                </tr>
+
+                <tr>
+                    <th>git clone "url"</th>
+                    <td>Se utiliza para clonar (copiar) un repositorio Git desde una URL remota a tu máquina local.</td>
+                    <td><ul>
+                        <li>"url": url del repositorio remoto</li>
+                    </ul></td>
+                    <td>git clone https://github.com/valgd/iw2023ittepic.git </td>
+                </tr>
+                
+                <tr>
+                    <th colspan="4">Cambios</th>
+                </tr>
+
+                <tr>
+                    <th>git status</th>
+                    <td>Muestra el estado de los archivos en tu directorio de trabajo.</td>
+                    <td><ul>
+                        <li>Ninguno</li>
+                    </ul></td>
+                    <td>git status </td>
+                </tr>
+
+                <tr>
+                    <th>git add "fichero"</th>
+                    <td>Añadir archivo</td>
+                    <td><ul>
+                        <li>fichero: nombre del archivo a agregar</li>
+                        <li> . : en lugar de agregar un solo fichero, se añaden todos</li>
+                    </ul></td>
+                    <td>git add fichero1.text <br> git add . </td>
+                </tr>
+
+                <tr>
+                    <th>git commit -m "mensaje"</th>
+                    <td>Crea un nuevo commit con los archivos en el área de preparación y un mensaje descriptivo.</td>
+                    <td><ul>
+                        <li>-m: mensaje del commit</li>
+                    </ul></td>
+                    <td>git commit -m "Primer commit" </td>
+                </tr>
+
+                <tr>
+                    <th>git diff</th>
+                    <td>Muestra las diferencias entre tu directorio de trabajo y la versión más reciente confirmada.</td>
+                    <td><ul>
+                        <li>ninguno: muestra lo ya mencionado en la descripción</li>
+                        <li>nombre de dos commits: muestra la diferencia entre dos commits específicos</li>
+                    </ul></td>
+                    <td> git diff <br>
+                    git diff asdc12 brdf34</td>
+                </tr>
+
+                <tr>
+                    <th>git log</th>
+                    <td>Muestra todos los commits en el historial</td>
+                    <td><ul>
+                        <li>ninguno: muestra todos los commits</li>
+                        <li>-n "n": muestra los últimos "n" commits</li>
+                        <li>--stat: Muestra estadísticas resumidas de cambios en cada commit </li>
+                        <li>--oneline: Muestra cada commit en una sola línea con su resumen y el autor. </li>
+                    </ul></td>
+                    <td>git log <br>
+                    git log n 5 <br>
+                    git log --stat <br>
+                    git log --oneline
+                </td>
+                </tr>
+
+                <tr>
+                    <th>git reset</th>
+                    <td> Mueve la rama actual y el HEAD a un commit específico</td>
+                    <td><ul>
+                        <li>--soft: mover el HEAD y la rama actual a un commit anterior y hacer que parezca como si nunca hubieras realizado los commits posteriores </li>
+                        <li> --hard: Se utiliza para mover el HEAD y la rama actual a un commit anterior y eliminar todos los cambios realizados en los commits posteriores </li>
+                    </ul></td>
+                    <td> git reset --soft HEAD~2<br>
+                        git reset --mixed HEAD~2
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>git stash</th>
+                    <td> Guarda temporalmente cambios no comprometidos en una pila de cambios</td>
+                    <td><ul>
+                        <li> list: muestra la lista de stashes </li>
+                        <li> save: guarda los cambios en un stash con mensaje </li>
+                    </ul></td>
+                    <td> git stash list<br>
+                        git stash save "Cambios"
+                    </td>
+                </tr>
+
+                <tr>
+                    <th colspan="4">Ramas</th>
+                </tr>
+                
+                <tr>
+                    <th>git branch</th>
+                    <td>Muestra una lista de todas las ramas en el repositorio.</td>
+                    <td><ul>
+                        <li>ninguno</li>
+                    </ul></td>
+                    <td>git branch</td>
+                </tr>
+
+                <tr>
+                    <th>git branch "nombre"</th>
+                    <td>Crear una nueva rama en el commit actual</td>
+                    <td><ul>
+                        <li>"nombre": nombre de la rama a crear</li>
+                    </ul></td>
+                    <td>git branch ramaE</td>
+                </tr>
+
+                <tr>
+                    <th>git checkout "nombre"</th>
+                    <td>Cambiar de rama</td>
+                    <td><ul>
+                        <li>"nombre": nombre de la rama a la cual se moverá</li>
+                    </ul></td>
+                    <td>git checkout ramaE</td>
+                </tr>
+
+                <tr>
+                    <th>git merge "nombre"</th>
+                    <td>Fusiona la rama actual con "nombre".</td>
+                    <td><ul>
+                        <li>"nombre": nombre de la rama con la que se fusionará la rama actual</li>
+                    </ul></td>
+                    <td>git merge ramaS</td>
+                </tr>
+
+                <tr>
+                    <th>git branch -d "nombre"</th>
+                    <td>Elimina la rama indicada</td>
+                    <td><ul>
+                        <li>"nombre": nombre de la rama a eliminar</li>
+                    </ul></td>
+                    <td>git branch -d ramaS</td>
+                </tr>
+
+                <tr>
+                    <th>git rebase "nombre"</th>
+                    <td>Reorganiza y aplica commits en la rama actual</td>
+                    <td><ul>
+                        <li>"nombre": nombre de la rama </li>
+                    </ul></td>
+                    <td>git rebase main</td>
+                </tr>
+
+                <tr>
+                    <th>git cherry-pick</th>
+                    <td>Aplica un commit específico de una rama a otra</td>
+                    <td><ul>
+                        <li>"sha del commit": identificador del commit </li>
+                    </ul></td>
+                    <td>git cherry-pick ascd123</td>
+                </tr>
+
+                <tr>
+                    <th colspan="4">Tags</th>
+                </tr>
+
+                <tr>
+                    <th>git tag</th>
+                    <td>Visualizar todos los tags</td>
+                    <td><ul>
+                        <li>Ninguno</li>
+                    </ul></td>
+                    <td>git tag</td>
+                </tr>
+
+                <tr>
+                    <th>git tag -a "id tag" -m "mensaje"</th>
+                    <td>Crear un tag para el último commit realizado con un mensaje enlazado a este tag</td>
+                    <td><ul>
+                        <li>-a:ndica que estás creando una etiqueta anotada, que incluye un mensaje descriptivo junto con la etiqueta.  </li>
+                        <li>"id tag":  nombre que deseas para tu etiqueta </li>
+                        <li>-m "mensaje": mensaje descriptivo que explique la razón o el propósito de la etiqueta. </li>
+                    </ul></td>
+                    <td>git tag -a v1.0 -m "primera versión"</td>
+                </tr>
+
+                <tr>
+                    <th>git tag -d "id tag"</th>
+                    <td>Eliminar el tag especificado</td>
+                    <td><ul>
+                        <li>-d: eliminar </li>
+                        <li>"id tag": nombre del tag a eliminar</li>
+                    </ul></td>
+                    <td>git tag -d v1.0</td>
+                </tr>
+
+                <tr>
+                    <th colspan="4">Compartir y actualizar</th>
+                </tr>
+
+                <tr>
+                    <th>git remote add origin "URL_del_repositorio"</th>
+                    <td>Conectar el repositorio local a un repositorio remoto</td>
+                    <td><ul>
+                        <li>origin: : Es el nombre que se le da convencionalmente al repositorio remoto principal. Puedes usar otro nombre si lo deseas</li>
+                        <li>"URL_del_repositorio": dirección URL del repositorio remoto que deseas agregar</li>
+                    </ul></td>
+                    <td>git remote add origin https://github.com/valgd/iw2023ittepic.git </td>
+                </tr>
+
+                <tr>
+                    <th>git fetch</th>
+                    <td>Descarga información sobre las ramas remotas sin fusionar cambios.</td>
+                    <td><ul>
+                        <li>nombre del repositorio: obtener cambios de un repositorio remoto específico.</li>
+                        <li>rama específica: especificar una rama específica en el repositorio remoto desde la cual deseas obtener cambios.</li>
+                        <li>todas las ramas:btener todos los cambios y referencias de todas las ramas en el repositorio remoto </li>
+                        <li>tags:obtener etiquetas (tags) del repositorio remoto  </li>
+                        <li>pruning:eliminar ramas locales que ya no existen en el repositorio remoto</li>
+                        <li>mostrar progreso:ver un progreso detallado de la descarga </li>
+
+                    </ul></td>
+                    <td>git fetch origin <br>
+                    git fetch origin ramaE <br>
+                    git fecth --all <br>
+                    git fetch --tags <br>
+                    git fetch --prune <br>
+                    git fetch --progress
+                </td>
+                </tr>
+
+                <tr>
+                    <th>git push "repositorio"" "rama" </th>
+                    <td>Se utiliza para enviar tus cambios locales a un repositorio remoto</td>
+                    <td><ul>
+                        <li>"repositorio": nombre del repositorio remoto al que deseas enviar tus cambios</li>
+                        <li>"rama": ama local que deseas enviar al repositorio remoto </li>
+                        <li>--force: forzar la actualización de la rama remota con la versión local</li>
+                    </ul></td>
+                    <td>git push origin ramaE <br>
+                    git push origin ramaE --force</td>
+                </tr>
+
+                <tr>
+                    <th>git pull</th>
+                <td>Obtener y fusionar los commits de la remota a la rama local</td>
+                <td>
+                    <ul>
+                        <li>nombre del repositorio: recupera cambios del repositorio remoto llamado</li>
+                        <li>nombre de la rama remota:obtiene cambios de la rama remota que está asociada con la rama local actual </li>
+                        <li>--rebase:reorganizará tus commits locales sobre los commits remotos </li>
+                    </ul>
+                </td>
+                <td>git pull origin <br>
+                git pull origin ramaE <br>
+                git pull --rebase origin ramaE
+                </td>
+                </tr>
+                
+
+                
+    
+            </tbody>
+        </table>
+    </main>
+    
+    
+
+    <div class="conclusion">
+        <h3>Conclusión personal</h3>
+        <p>En conclusión, GIT es una herramienta muy valiosa para realizar las buenas prácticas
+            de controlar vesiones, este nos proporciona una lista muy grande de comandos a ejecutar
+            que nos facilitan el control al momento del desarrollo.
+        </p>
+    </div>
+
+
+</body>
+
+<footer>    
+        <div class="pie">
+            <h4>Ingeniería en Sistemas Computacionales</h4>
+            <p>Interfaces Web</p>
+            <p>Tarea 5 - Glosario de comandos GIT</p>
+        </div>
+
+    <p class="derechos">&copy; Valeria Dinora Gutiérrez Delgado - 19400586</p>
+</footer>
+</body>
+</html>
